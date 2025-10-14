@@ -59,7 +59,7 @@ ssh -q $TGCC_PROFILE -t $TGCC_CMD
 if [ $? -eq 0 ]; then
   OK
 else
-  echo -e "\n${err}Fail to create installation folder on TGCC.. abort${norm}"
+  echo -e "\n${err}Fail to create installation folder on TGCC (rc=$?).. abort${norm}"
   exit 10
 fi
 
