@@ -43,13 +43,13 @@ if [[ -z "${TGCC_PROFILE}" ]]; then
   exit 0
 fi
 
-echo -n "- create TGCC '~/bin' folder '~/.tgcc' "
+echo -n "- create TGCC '~/bin' folder "
 TGCC_CMD="bash -l -c \"mkdir -p ~/bin\""
 ssh -q $TGCC_PROFILE -t $TGCC_CMD
 if [ $? -eq 0 ]; then
   OK
 else
-  echo -e "\n${err}Fail to create TGCC folder .. abort${norm}"
+  echo -e "\n${err}Fail to create TGCC '~/bin' folder (rc=$?).. abort${norm}"
   exit 10
 fi
 
