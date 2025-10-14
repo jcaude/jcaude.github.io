@@ -37,15 +37,15 @@ echo -e "${bold}[ Deploy InstallerTGCC on your computer ]${norm}"
 echo ""
 echo -e "${bold}[ Deploy InstallerTGCC on TGCC ]${norm}"
 
-read -p "> Enter your TGCC ssh configuration profile (or ENTER if you haven't configure SSH profiles): " TGCC_PROFILE
-if [[ -z "${TGCC_PROFILE}" ]]; then
+read -p "> Enter your TGCC ssh configuration profile (or ENTER if you haven't configure SSH profiles): " TGCC_SSH_CONFIG
+if [[ -z "${TGCC_SSH_CONFIG}" ]]; then
   echo -e "${red}Abort remote installation${norm}"
   exit 0
 fi
 
 echo -n "- create TGCC '~/bin' folder "
 TGCC_CMD="bash -l -c \"mkdir -p ~/bin\""
-ssh -q $TGCC_PROFILE -t $TGCC_CMD
+ssh -q $TGCC_SSH_CONFIG -t $TGCC_CMD
 if [ $? -eq 0 ]; then
   OK
 else
@@ -55,7 +55,7 @@ fi
 
 echo -n "- create TGCC installation folder '~/.tgcc' "
 TGCC_CMD="bash -l -c \"mkdir -p ~/.tgcc\""
-ssh -q $TGCC_PROFILE -t $TGCC_CMD
+ssh -q $TGCC_SSH_CONFIG -t $TGCC_CMD
 if [ $? -eq 0 ]; then
   OK
 else
@@ -73,7 +73,7 @@ fi
 
 echo -n "- link scripts in ~/bin on TGCC "
 TGCC_CMD="bash -l -c \"ln -sf ~/.tgcc/InstallerTGCC/docker/scripts/docker-import.sh ~/bin\""
-ssh -q $TGCC_PROFILE -t $TGCC_CMD
+ssh -q $TGCC_SSH_CONFIG -t $TGCC_CMD
 if [ $? -ne 0 ]; then
   echo -e "\n${err}Fail to link docker import script.. abort${norm}"
 fi
