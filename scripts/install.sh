@@ -80,5 +80,4 @@ else
   echo -e "\n${err}Fail to link docker import script.. abort${norm}"
 fi
 
-echo ""
-echo -e "\n${green}[ InstallerTGCC setup complete ]${norm}"
+echo -e "\n${green}[ --- InstallerTGCC setup complete --- ]${norm}"
