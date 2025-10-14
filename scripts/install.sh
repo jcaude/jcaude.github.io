@@ -74,8 +74,11 @@ fi
 echo -n "- link scripts in ~/bin on TGCC "
 TGCC_CMD="bash -l -c \"ln -sf ~/.tgcc/InstallerTGCC/docker/scripts/docker-import.sh ~/bin\""
 ssh -q $TGCC_SSH_CONFIG -t $TGCC_CMD
-if [ $? -ne 0 ]; then
+if [ $? -eq 0 ]; then
+  OK
+else
   echo -e "\n${err}Fail to link docker import script.. abort${norm}"
 fi
 
-echo -e "\n${green}InstallerTGCC setup complete${norm}"
+echo ""
+echo -e "\n${green}[ InstallerTGCC setup complete ]${norm}"
