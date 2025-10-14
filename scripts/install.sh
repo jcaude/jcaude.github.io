@@ -12,25 +12,25 @@ OK() {
 
 echo -e "${bold}[ Deploy InstallerTGCC on your computer ]${norm}"
 
-# echo -n "- create local '~/bin' directory "
-# mkdir -p ${HOME}/bin
-# OK
+echo -n "- create local '~/bin' directory "
+mkdir -p ${HOME}/bin
+OK
 
-# echo -n "- create local installation folder '~/.tgcc' "
-# mkdir -p ${HOME}/.tgcc
-# cd ${HOME}/.tgcc
-# OK
+echo -n "- create local installation folder '~/.tgcc' "
+mkdir -p ${HOME}/.tgcc
+cd ${HOME}/.tgcc
+OK
 
-# echo  "- clone repository.."
-# git clone git@github.com:neurospin-brainomics/InstallerTGCC.git
+echo  "- clone repository.."
+git clone git@github.com:neurospin-brainomics/InstallerTGCC.git
 
-# echo -n "- link InstallerTGCC files in the bin directory "
-# ln -sf ~/.tgcc/InstallerTGCC/docker/scripts/push-* ~/bin
-# ln -sf ~/.tgcc/InstallerTGCC/sync/scripts/sync-* ~/bin
-# OK
+echo -n "- link InstallerTGCC files in the bin directory "
+ln -sf ~/.tgcc/InstallerTGCC/docker/scripts/push-* ~/bin
+ln -sf ~/.tgcc/InstallerTGCC/sync/scripts/sync-* ~/bin
+OK
 
-# echo ""
-# echo -e "${bold}NOTE: ~/bin must be in your PATH variable${norm}"
+echo ""
+echo -e "${bold}NOTE: ~/bin must be in your PATH variable${norm}"
 
 # -- part 2 : deploy on TGCC
 
