@@ -63,8 +63,9 @@ else
   exit 10
 fi
 
-echo "- synchronise InstallerTGCC repository "
-$HOME/bin/sync-tgcc.sh -s "$HOME/.tgcc/InstallerTGCC" -d "~/.tgcc/"
+echo "- synchronise InstallerTGCC repository"
+echo ""
+$HOME/bin/sync-tgcc.sh -s "$HOME/.tgcc/InstallerTGCC" -d ".tgcc/"
 if [ $? -ne 0 ]; then
   echo -e "\n${err}Synchronisastion fail .. abort${norm}"
   exit 10
