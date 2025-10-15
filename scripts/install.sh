@@ -43,7 +43,7 @@ mkdir -p ${INSTALL_PATH}
 cd ${INSTALL_PATH}
 OK
 
-echo  "- clone repository.."
+echo  "- clone repository (branch ${TGCC_BRANCH}).."
 git clone -b "${TGCC_BRANCH}" git@github.com:neurospin-brainomics/InstallerTGCC.git
 
 echo -n "- link InstallerTGCC files in the bin directory "
