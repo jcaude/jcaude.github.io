@@ -20,7 +20,7 @@ INSTALL_PATH="${HOME}/.tgcc"
 TGCC_BRANCH="main"
 
 OPTSTRING=":p:b:"
-hile getopts ${OPTSTRING} opt; do
+while getopts ${OPTSTRING} opt; do
   case "$opt" in
   p) INSTALL_PATH=$OPTARG
       ;;
