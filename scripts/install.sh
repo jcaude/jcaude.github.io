@@ -44,7 +44,7 @@ if [[ -z "${TGCC_SSH_CONFIG}" ]]; then
 fi
 
 echo -n "- create TGCC '~/bin' folder "
-TGCC_CMD="bash -l -c \"mkdir -p ~/bin\""
+TGCC_CMD="bash -c \"mkdir -p ~/bin\""
 ssh -q $TGCC_SSH_CONFIG -t $TGCC_CMD
 if [ $? -eq 0 ]; then
   OK
@@ -54,7 +54,7 @@ else
 fi
 
 echo -n "- create TGCC installation folder '~/.tgcc' "
-TGCC_CMD="bash -l -c \"mkdir -p ~/.tgcc\""
+TGCC_CMD="bash -c \"mkdir -p ~/.tgcc\""
 ssh -q $TGCC_SSH_CONFIG -t $TGCC_CMD
 if [ $? -eq 0 ]; then
   OK
@@ -65,14 +65,14 @@ fi
 
 echo "- synchronise InstallerTGCC repository"
 echo ""
-$HOME/bin/sync-tgcc.sh -s "$HOME/.tgcc/InstallerTGCC" -d ".tgcc/"
+$HOME/bin/sync-tgcc.sh -s "$HOME/.tgcc/InstallerTGCC" -d ".tgcc/" -z
 if [ $? -ne 0 ]; then
   echo -e "\n${err}Synchronisastion fail .. abort${norm}"
   exit 10
 fi
 
 echo -n "- link scripts in ~/bin on TGCC "
-TGCC_CMD="bash -l -c \"ln -sf ~/.tgcc/InstallerTGCC/docker/scripts/docker-import.sh ~/bin\""
+TGCC_CMD="bash -c \"ln -sf ~/.tgcc/InstallerTGCC/docker/scripts/docker-import.sh ~/bin\""
 ssh -q $TGCC_SSH_CONFIG -t $TGCC_CMD
 if [ $? -eq 0 ]; then
   OK
