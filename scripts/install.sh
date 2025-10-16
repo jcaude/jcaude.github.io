@@ -64,6 +64,7 @@ if [[ -z "${TGCC_SSH_CONFIG}" ]]; then
   Error "Abort remote installation"
   exit 0
 fi
+export TGCC_SSH_CONFIG="$TGCC_SSH_CONFIG"
 
 echo -n "- create TGCC '~/bin' folder "
 TGCC_CMD="bash -c \"mkdir -p ~/bin\""
