@@ -47,8 +47,8 @@ echo  "- clone repository (branch ${TGCC_BRANCH}).."
 git clone -b "${TGCC_BRANCH}" git@github.com:neurospin-brainomics/InstallerTGCC.git
 
 echo -n "- link InstallerTGCC files in the bin directory "
-ln -sf "${INSTALL_PATH}/InstallerTGCC/docker/scripts/push-*" "${HOME}/bin"
-ln -sf "${INSTALL_PATH}/InstallerTGCC/sync/scripts/sync-*" "${HOME}/bin"
+ln -sf $INSTALL_PATH/InstallerTGCC/docker/scripts/push-* "${HOME}/bin"
+ln -sf $INSTALL_PATH/InstallerTGCC/sync/scripts/sync-* "${HOME}/bin"
 OK
 
 echo ""
