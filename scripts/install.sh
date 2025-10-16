@@ -18,13 +18,16 @@ Error() {
 
 INSTALL_PATH="${HOME}/.tgcc"
 TGCC_BRANCH="main"
+TGCC_INSTALL=0
 
-OPTSTRING=":p:b:"
+OPTSTRING=":p:b:z"
 while getopts ${OPTSTRING} opt; do
   case "$opt" in
   p) INSTALL_PATH=$OPTARG
       ;;
   b) TGCC_BRANCH=$OPTARG
+      ;;
+  z) TGCC_INSTALL=1
       ;;
   *) Error "Unknown Arguments.. exit"
       exit 1
@@ -55,6 +58,10 @@ echo ""
 echo -e "${bold}NOTE: ~/bin must be in your PATH variable${norm}"
 
 # -- part 2 : deploy on TGCC
+
+if [ $TGCC_INSTALL -ne 0 ]; then
+  echo -e "\n${green}[ --- (LOCAL) InstallerTGCC setup complete --- ]${norm}"
+fi
 
 echo ""
 echo -e "${bold}[ Deploy InstallerTGCC on TGCC ]${norm}"
