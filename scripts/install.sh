@@ -61,6 +61,7 @@ echo -e "${bold}NOTE: ~/bin must be in your PATH variable${norm}"
 
 if [ $TGCC_INSTALL -ne 0 ]; then
   echo -e "\n${green}[ --- (LOCAL) InstallerTGCC setup complete --- ]${norm}"
+  exit 0
 fi
 
 echo ""
