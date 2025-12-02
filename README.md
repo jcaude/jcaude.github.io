@@ -1,4 +1,3 @@
-# InstallerTGCC scripts..
+# My Homepage
 
-my stuff.. in construction 
-
+🚧 maybe one day I will fill this homepage
