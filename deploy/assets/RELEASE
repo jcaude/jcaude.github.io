@@ -1,1 +1,6 @@
-Release 1.0.11 -- Early Alpha (fixed)
+Deploy v1.3.6 - Beta / GAIA
+NEW: deploy logo in the help (deploy --help) and in the console header
+NEW: logo colors follow the theme (dark/light) and --color / --no-color
+NOTE: developers: API documentation with cargo doc, see Development.md
+NOTE: update deploy-service for its new header (deploy -p <host> update)
+NOTE: HTTPS through rustls (system and bundled CA certificates)
