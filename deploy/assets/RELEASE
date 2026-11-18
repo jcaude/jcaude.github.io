@@ -1,6 +1,7 @@
-Deploy v1.3.6 - Beta / GAIA
-NEW: deploy logo in the help (deploy --help) and in the console header
-NEW: logo colors follow the theme (dark/light) and --color / --no-color
-NOTE: developers: API documentation with cargo doc, see Development.md
-NOTE: update deploy-service for its new header (deploy -p <host> update)
-NOTE: HTTPS through rustls (system and bundled CA certificates)
+Deploy v1.4.0 - Beta / UV
+NEW: sync -B uv (--backend uv): uv projects, besides pixi (still the default)
+NEW: uv environments: -e default (.venv), -e <group or extra> (.venv-<e>)
+NEW: profile keys Backend, UvEnvironments, UvPython and UvPlatform
+FIX: install --force updates the configuration in use, keeping its values
+NOTE: update deploy-service for the uv backend (deploy -p <host> update)
+NOTE: uv backend: uv and a Python interpreter are needed on the target host
