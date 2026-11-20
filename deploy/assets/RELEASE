@@ -1,7 +1,6 @@
-Deploy v1.4.0 - Beta / UV
-NEW: sync -B uv (--backend uv): uv projects, besides pixi (still the default)
-NEW: uv environments: -e default (.venv), -e <group or extra> (.venv-<e>)
-NEW: profile keys Backend, UvEnvironments, UvPython and UvPlatform
-FIX: install --force updates the configuration in use, keeping its values
-NOTE: update deploy-service for the uv backend (deploy -p <host> update)
-NOTE: uv backend: uv and a Python interpreter are needed on the target host
+Deploy v1.4.5 - Validation
+NEW: regression tests on disposable QEMU VMs: test/vm/run.sh (Development.md)
+NEW: Markdown report of each regression run, in test/vm/reports/
+NEW: Claude Code agent regression-runner: runs the tests, analyses failures
+NOTE: developers: deploy and deploy-service are unchanged, only tests and docs
+NOTE: test configs renamed valoxe-utm, vcorton-utm (the hand-made UTM VMs)
