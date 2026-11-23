@@ -1,6 +1,8 @@
-Deploy v1.4.5 - Validation
-NEW: regression tests on disposable QEMU VMs: test/vm/run.sh (Development.md)
-NEW: Markdown report of each regression run, in test/vm/reports/
-NEW: Claude Code agent regression-runner: runs the tests, analyses failures
-NOTE: developers: deploy and deploy-service are unchanged, only tests and docs
-NOTE: test configs renamed valoxe-utm, vcorton-utm (the hand-made UTM VMs)
+Deploy v1.5.0 - Singularity @ IDRIS
+NEW: SIF images copied to the IDRIS repository with idrcontmgr (Jean-Zay)
+NEW: service key [Singularity] SIFIdris, set by install when idrcontmgr found
+FIX: update only upgrades (versions compared as numbers), -f to downgrade
+FIX: update downloads deploy-service once, profile file read once
+FIX: unused dependency uname removed
+NOTE: Jean-Zay: update deploy-service, then run deploy-service install --force
+NOTE: an IDRIS image of the same name is replaced without asking (warning)
