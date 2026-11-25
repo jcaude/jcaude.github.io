@@ -102,5 +102,5 @@ GetAssets
 echo -n "${bold}> download assets${norm} "
 OK
 
-echo "$RELEASE_TAG" > "$DOWNLOAD_DIR/TAG"
-
+# -- useless with new release signed
+# echo "$RELEASE_TAG" > "$DOWNLOAD_DIR/TAG"
