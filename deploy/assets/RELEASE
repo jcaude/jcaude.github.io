@@ -1,39 +1,5 @@
-Deploy v1.6.0 - Security
-NEW: signed releases, checked before updates and install <host>
-FIX: release binaries built with integer overflow checks
-FIX: dependencies locked, checked against known vulnerabilities
-FIX: git URLs and hosts starting with '-' refused, git ls-remote uses --
-FIX: git token only given to the host of the repository, redirects refused
-FIX: ARM Linux workstation: deploy update finds its binary
-FIX: log file in the configuration directory, mode 600, links refused
-FIX: paths and names of the remote commands checked (no shell characters)
-FIX: git TokenCommand not logged, git tokens masked by deploy config
-FIX: SSH profiles starting with '-' refused, host of install <host> checked
-FIX: deploy -p finds the profiles with a dot in their name
-FIX: control characters removed from release notes and remote messages
-FIX: programs found on hosts without the which command
-FIX: temporary files in private directories (0700), removed even on Ctrl-C
-NOTE: the update to 1.6.0 itself is not verified, the next ones are
-NOTE: update: the directory of the deploy program must be writable
-NOTE: remote temporary directories: absolute path or ~/ (relative refused)
-NOTE: git sources: task scripts not run by default, use --run-scripts (once)
-NOTE: or list the repository in the profile: [Git] TrustedRepositories
-NOTE: scripts run on a host need sha256sum or shasum there, else sync/push fails
-NOTE: http:// git repositories refused: use https://, SSH or --insecure
-NOTE: http:// also refused in redirections, insteadOf and origin of a clone
-NOTE: insteadOf to a local git mirror refused, even with --insecure
-NOTE: update deploy and deploy-service: an older deploy has no --insecure
-NOTE: private HTTPS repositories: redirections refused, use the final URL
-NOTE: (GitLab: ending with .git; existing clone: git remote set-url origin)
-NOTE: git token fix: update deploy-service on the hosts (deploy update)
-NOTE: ARM Linux workstation: install deploy-linux-aarch64 by hand this time
-NOTE: relative LogFile (deploy.log): set an absolute path in the configuration
-NOTE: and add "deploy.log" to [Sync] Exclude; copies on the hosts are kept
-NOTE: spaces and shell characters refused in remote paths and image names
-NOTE: $VAR refused in remote paths: use an absolute path or ~/
-NOTE: git tokens sent to a host: prefer a GitHub App or read-only tokens
-NOTE: SshProfile: host:port, ssh:// and IPv6 refused, use ~/.ssh/config
-NOTE: temporary files: in deploy-run-*, mktemp needed on the hosts
-NOTE: builder sources: no longer in <SshTemp>/<name>, for your own scripts
-NOTE: pcocc, singularity: update deploy-service (private image archives)
-NOTE: deploy-service config -o: an existing file is no longer replaced
+Deploy v1.6.5 - Private Keys
+NEW: SshHost and SshKey: reach a host with a key, instead of an SshProfile
+NEW: keys, known_hosts and ssh configuration in the configuration directory
+NEW: deploy install <host> --ssh-key <key> --name <profile>
+NOTE: an older deploy can't read a profile without SshProfile
