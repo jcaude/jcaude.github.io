@@ -1,5 +1,4 @@
-Deploy v1.6.5 - Private Keys
-NEW: SshHost and SshKey: reach a host with a key, instead of an SshProfile
-NEW: keys, known_hosts and ssh configuration in the configuration directory
-NEW: deploy install <host> --ssh-key <key> --name <profile>
-NOTE: an older deploy can't read a profile without SshProfile
+Deploy v1.7.0 - Modules
+NEW: sync --module writes HPC modulefiles of the environments (#31)
+NOTE: documentation files moved to the docs/ directory of the repository
+NOTE: new release and install site: neurospin-brainomics.github.io
